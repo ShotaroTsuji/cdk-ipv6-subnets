@@ -5,7 +5,18 @@ ECSサービスで動作するアプリケーションは [amazon-ecs-sample](ht
 
 ## インフラ構成
 
+IPv6アドレスのみが付与されたパブリックサブネット上でECSサービスが動作しています。
+[amazon/amazon-ecs-sample](https://hub.docker.com/r/amazon/amazon-ecs-sample)をアプリケーションとして動かしています。
+ロギングのためにFluent Bitを動作させ、ログをS3バケットに保存します。
+
 ![](./ipv6vpc.drawio.svg)
+
+### 注意点
+
+AWSにはIPv6に対応していないサービスがあります。
+
+* ECRはIPv6に対応していないため、dockerhubからイメージをpullします。
+* CloudWatch LogsはIPv6に対応していないため、Fluent BitとS3をログの保存に利用します。
 
 ## 開発方法
 
