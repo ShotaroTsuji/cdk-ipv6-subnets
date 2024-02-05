@@ -3,6 +3,10 @@
 IPv6を有効にしたVPC上でECSサービスを動作させるサンプルです。
 ECSサービスで動作するアプリケーションは [amazon-ecs-sample](https://hub.docker.com/r/amazon/amazon-ecs-sample) です。
 
+## インフラ構成
+
+![](./ipv6vpc.drawio.svg)
+
 ## 開発方法
 
 CDK Pythonプロジェクトです。以下の手順にしたがって開発してください。
